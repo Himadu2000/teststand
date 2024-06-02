@@ -21,8 +21,8 @@ Want to help a fellow developer? Create an issue!
 You get the gist. Create an issue!
 
 If you have a question on how to proceed on certain something,
-like "I'm making a library, what rustfmt/clippy/formatting/linting settings I use?"
-or "This is my huge project, what folder Structure should I use?"
+like "I'm making a library, what rustfmt/clippy/formatting/linting settings should I use?"
+or "This is my huge project, what folder structure should I use?"
 or "This is my OSS project, there're thousands of issues filed, what to do?"
 file an issue, our contributors will help, if needed our technical committee will give a decision.
 
