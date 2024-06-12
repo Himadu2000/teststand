@@ -1,12 +1,12 @@
+use axum::Router;
+use leptos::*;
+use leptos_axum::{generate_route_list, LeptosRoutes};
+use leptos_tailwind::{app::*, fallback::file_and_error_handler};
+use log::info;
+
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
-    use axum::Router;
-    use leptos::*;
-    use leptos_axum::{generate_route_list, LeptosRoutes};
-    use leptos_tailwind::{app::*, fallback::file_and_error_handler};
-    use log::info;
-
     simple_logger::init_with_level(log::Level::Info)
         .expect("couldn't initialize logging");
 
@@ -34,11 +34,4 @@ async fn main() {
     axum::serve(listener, app.into_make_service())
         .await
         .unwrap();
-}
-
-#[cfg(not(feature = "ssr"))]
-pub fn main() {
-    // no client-side main function
-    // unless we want this to work with e.g., Trunk for a purely client-side app
-    // see lib.rs for hydration function instead
 }
