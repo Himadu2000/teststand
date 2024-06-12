@@ -7,7 +7,7 @@ pub fn View() -> impl IntoView {
 
     // thanks to https://tailwindcomponents.com/component/blue-buttons-example for the showcase layout
     view! {
-        <Title text="Leptos + Tailwindcss"/>
+        <Title text="Home"/>
         <main>
             <div class="bg-gradient-to-tl from-blue-800 to-blue-500 text-white font-mono flex flex-col min-h-screen">
                 <div class="flex flex-row-reverse flex-wrap m-auto">
