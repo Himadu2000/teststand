@@ -3,9 +3,6 @@ use leptos_meta::*;
 
 #[component]
 pub fn View() -> impl IntoView {
-    let (value, set_value) = create_signal(0);
-
-    // thanks to https://tailwindcomponents.com/component/blue-buttons-example for the showcase layout
     view! {
         <Title text="Home"/>
         <main>
