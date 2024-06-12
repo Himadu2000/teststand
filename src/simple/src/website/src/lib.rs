@@ -1,4 +1,4 @@
-pub mod app;
+pub mod pages;
 
 #[cfg(feature = "ssr")]
 pub mod fallback;
@@ -6,7 +6,7 @@ pub mod fallback;
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]
 pub fn hydrate() {
-    use crate::app::App;
+    use crate::pages::App;
 
     // initializes logging using the `log` crate
     _ = console_log::init_with_level(log::Level::Debug);
