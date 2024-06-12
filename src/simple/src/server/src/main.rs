@@ -10,6 +10,7 @@ fn rocket() -> _ {
         .finish();
 
     rocket::build()
+        .attach(Cors)
         .manage(schema)
         .mount("/", routes![index])
         .mount("/graphql", graphql())
