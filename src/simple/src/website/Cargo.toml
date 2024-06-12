@@ -1,5 +1,5 @@
 [package]
-name = "leptos-tailwind"
+name = "website"
 edition = "2021"
 
 [lib]
