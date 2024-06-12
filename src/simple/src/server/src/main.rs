@@ -5,5 +5,12 @@ fn index() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+    let schema = Schema::build(QueryRoot, EmptyMutation, EmptySubscription)
+        .data(StarWars::new())
+        .finish();
+
+    rocket::build()
+        .manage(schema)
+        .mount("/", routes![index])
+        .mount("/graphql", graphql())
 }
