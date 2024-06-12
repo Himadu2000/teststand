@@ -1,8 +1,9 @@
+use super::data::Data;
 use leptos::*;
 use leptos_meta::*;
 
 #[component]
-pub fn View() -> impl IntoView {
+pub fn View(data: Data) -> impl IntoView {
     view! {
         <Title text="Home"/>
         <main>
