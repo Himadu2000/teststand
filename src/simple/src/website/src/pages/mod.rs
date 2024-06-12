@@ -1,5 +1,6 @@
 mod home;
 
+use home::Home;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
