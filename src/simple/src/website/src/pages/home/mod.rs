@@ -1,7 +1,6 @@
 mod view;
 
 use leptos::*;
-use leptos_meta::*;
 use view::View;
 
 #[component]
