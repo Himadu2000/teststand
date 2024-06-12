@@ -1,3 +1,7 @@
+use crate::{
+    services::{Mutation, Query},
+    util::{cors::Cors, graphql::graphql},
+};
 use async_graphql::{EmptyMutation, EmptySubscription, Schema};
 
 #[get("/")]
@@ -7,7 +11,7 @@ fn index() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
-    let schema = Schema::build(QueryRoot, EmptyMutation, EmptySubscription).finish();
+    let schema = Schema::build(Query::default(), Mutation::default(), EmptySubscription).finish();
 
     rocket::build()
         .attach(Cors)
