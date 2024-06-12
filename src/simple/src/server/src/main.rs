@@ -1,3 +1,5 @@
+use async_graphql::{EmptyMutation, EmptySubscription, Schema};
+
 #[get("/")]
 fn index() -> &'static str {
     "Hello, world!"
@@ -5,9 +7,7 @@ fn index() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
-    let schema = Schema::build(QueryRoot, EmptyMutation, EmptySubscription)
-        .data(StarWars::new())
-        .finish();
+    let schema = Schema::build(QueryRoot, EmptyMutation, EmptySubscription).finish();
 
     rocket::build()
         .attach(Cors)
