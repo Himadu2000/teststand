@@ -2,7 +2,7 @@ use crate::{
     services::{Mutation, Query},
     util::{cors::Cors, graphql::graphql},
 };
-use async_graphql::{EmptyMutation, EmptySubscription, Schema};
+use async_graphql::{EmptySubscription, Schema};
 use rocket::{get, routes};
 
 #[get("/")]
