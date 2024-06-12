@@ -1,5 +1,5 @@
 pub struct Data {
-    value: u8,
-    add: fn(),
-    sub: fn(),
+    pub value: u8,
+    pub add: fn(),
+    pub sub: fn(),
 }
