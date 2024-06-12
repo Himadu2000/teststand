@@ -1,0 +1,5 @@
+[package]
+name = "website"
+edition = "2021"
+
+[dependencies]
