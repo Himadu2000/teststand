@@ -1,7 +1,8 @@
 mod data;
 mod view;
 
-use leptos::*;
+use data::Data;
+use leptos::{ev::MouseEvent, *};
 use view::View;
 
 #[component]
