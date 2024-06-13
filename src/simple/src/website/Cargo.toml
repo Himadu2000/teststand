@@ -51,7 +51,7 @@ site-root = "target/site"
 # The tailwind input file.
 #
 # Optional, Activates the tailwind build
-tailwind-input-file = "style/tailwind.css"
+tailwind-input-file = "public/style.css"
 
 # [Optional] Files in the asset-dir will be copied to the site-root directory
 assets-dir = "public"
