@@ -1,13 +1,12 @@
 mod pages;
 
-use axum::{Router,serve};
+use axum::{serve, Router};
 use leptos::*;
 use leptos_axum::{generate_route_list, LeptosRoutes};
-use log::{info,Level::Info};
-use website::{fallback::file_and_error_handler, pages::{App}};
-use tokio::net::TcpListener
+use log::{info, Level::Info};
+use tokio::net::TcpListener;
+use website::{fallback::file_and_error_handler, pages::App};
 
-#[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
     simple_logger::init_with_level(Info).expect("couldn't initialize logging");
@@ -33,7 +32,5 @@ async fn main() {
     // `axum::Server` is a re-export of `hyper::Server`
     info!("listening on http://{}", &addr);
     let listener = TcpListener::bind(&addr).await.unwrap();
-    serve(listener, app.into_make_service())
-        .await
-        .unwrap();
+    serve(listener, app.into_make_service()).await.unwrap();
 }
