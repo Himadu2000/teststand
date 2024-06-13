@@ -1,15 +1,16 @@
 mod pages;
 
-use axum::Router;
+use axum::{Router,serve};
 use leptos::*;
 use leptos_axum::{generate_route_list, LeptosRoutes};
-use log::info;
-use website::{fallback::file_and_error_handler, pages::*};
+use log::{info,Level::Info};
+use website::{fallback::file_and_error_handler, pages::{App}};
+use tokio::net::TcpListener
 
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
-    simple_logger::init_with_level(log::Level::Info).expect("couldn't initialize logging");
+    simple_logger::init_with_level(Info).expect("couldn't initialize logging");
 
     // Setting get_configuration(None) means we'll be using cargo-leptos's env values
     // For deployment these variables are:
@@ -31,8 +32,8 @@ async fn main() {
     // run our app with hyper
     // `axum::Server` is a re-export of `hyper::Server`
     info!("listening on http://{}", &addr);
-    let listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
-    axum::serve(listener, app.into_make_service())
+    let listener = TcpListener::bind(&addr).await.unwrap();
+    serve(listener, app.into_make_service())
         .await
         .unwrap();
 }
