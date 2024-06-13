@@ -1,5 +1,5 @@
 use super::data::Data;
-use leptos::*;
+use leptos::{ev::MouseEvent, *};
 use leptos_meta::*;
 
 #[component]
