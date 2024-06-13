@@ -4,7 +4,7 @@ use axum::Router;
 use leptos::*;
 use leptos_axum::{generate_route_list, LeptosRoutes};
 use log::info;
-use website::{app::*, fallback::file_and_error_handler};
+use website::{fallback::file_and_error_handler, pages::*};
 
 #[cfg(feature = "ssr")]
 #[tokio::main]
