@@ -11,9 +11,8 @@ pub fn Home() -> impl IntoView {
 
     // thanks to https://tailwindcomponents.com/component/blue-buttons-example for the showcase layout
 
-    fn add() {
-        set_value.update(|value| *value += 1)
-    }
+    let add = move |_: MouseEvent| set_value.update(|value| *value += 1);
+    let sub = move |_: MouseEvent| set_value.update(|value| *value -= 1);
 
     fn sub() {
         set_value.update(|value| *value -= 1)
