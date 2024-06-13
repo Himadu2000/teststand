@@ -7,6 +7,7 @@ use log::{info, Level::Info};
 use tokio::net::TcpListener;
 use website::{fallback::file_and_error_handler, pages::App};
 
+#[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
     simple_logger::init_with_level(Info).expect("couldn't initialize logging");
