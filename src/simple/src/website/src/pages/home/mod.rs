@@ -17,6 +17,6 @@ pub fn Home() -> impl IntoView {
     let data = Data { value };
 
     view! {
-        <View add sub />
+        <View data=data events=(add, sub) />
     }
 }
