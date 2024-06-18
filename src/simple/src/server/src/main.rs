@@ -1,3 +1,6 @@
+mod services;
+mod util;
+
 use crate::{
     services::{Mutation, Query},
     util::{cors::Cors, graphql::graphql},
