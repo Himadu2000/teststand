@@ -6,8 +6,8 @@ use cynic::{http::ReqwestExt, QueryBuilder};
 use data::Data;
 use leptos::*;
 use query::UnnamedQuery;
-use view::View;
 use reqwest::Client;
+use view::View;
 
 #[component]
 pub fn Home() -> impl IntoView {
@@ -17,11 +17,19 @@ pub fn Home() -> impl IntoView {
 
     let operation = UnnamedQuery::build(());
 
-    let response = create_resource(|| (), |_| async move { Client::new()
-        .post("http://127.0.0.1:8000/graphql")
-        .json(&operation)
-        .send().await
-        .unwrap().json::<GraphQlResponse<UnnamedQuery>>.unwrap() });
+    let response = create_resource(
+        || (),
+        |_| async move {
+            Client::new()
+                .post("http://127.0.0.1:8000/graphql")
+                .json(&operation)
+                .send()
+                .await
+                .unwrap()
+                .json::<GraphQlResponse<UnnamedQuery>>()
+                .unwrap()
+        },
+    );
 
     let add = move |_| set_value.update(|value| *value += 1);
     let sub = move |_| set_value.update(|value| *value -= 1);
