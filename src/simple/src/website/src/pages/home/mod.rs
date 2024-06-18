@@ -2,7 +2,7 @@ mod data;
 mod query;
 mod view;
 
-use cynic::{http::ReqwestExt, QueryBuilder};
+use cynic::{http::ReqwestExt, GraphQlResponse, QueryBuilder};
 use data::Data;
 use leptos::*;
 use query::UnnamedQuery;
