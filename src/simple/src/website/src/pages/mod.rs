@@ -5,6 +5,10 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
+// Pull in the Star Wars schema we registered in build.rs
+#[cynic::schema("schema")]
+mod schema {}
+
 #[component]
 pub fn App() -> impl IntoView {
     provide_meta_context();
