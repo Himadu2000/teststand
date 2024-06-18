@@ -3,7 +3,7 @@ use crate::{
     util::{cors::Cors, graphql::graphql},
 };
 use async_graphql::{EmptySubscription, Schema};
-use rocket::{get, routes};
+use rocket::{get, launch, routes};
 
 #[get("/")]
 fn index() -> &'static str {
