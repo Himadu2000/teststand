@@ -41,6 +41,9 @@ ssr = [
     "dep:tracing",
 ]
 
+[build-dependencies]
+cynic = "3.7.3"
+
 [package.metadata.cargo-all-features]
 denylist = ["axum", "tokio", "tower", "tower-http", "leptos_axum"]
 skip_feature_sets = [["ssr", "hydrate"]]
