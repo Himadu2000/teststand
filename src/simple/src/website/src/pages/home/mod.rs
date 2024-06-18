@@ -27,6 +27,7 @@ pub fn Home() -> impl IntoView {
                 .await
                 .unwrap()
                 .json::<GraphQlResponse<UnnamedQuery>>()
+                .await
                 .unwrap()
         },
     );
