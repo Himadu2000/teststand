@@ -26,6 +26,7 @@ leptos_meta = "0.6.12"
 leptos_axum = { version = "0.6.12", optional = true }
 leptos_router = "0.6.12"
 cynic = { version = "3.7.3", features = ["http-reqwest"] }
+reqwest = "0.12.5"
 
 [features]
 hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]
