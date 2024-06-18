@@ -16,6 +16,14 @@ pub fn Home() -> impl IntoView {
 
     let operation = UnnamedQuery::build(());
 
+    let response = reqwest::blocking::Client::new()
+    .post("http://127.0.0.1:8000/graphql")
+    .json(&operation)
+    .send()
+    .unwrap();
+
+let all_films_result = response.json::<GraphQlResponse<AllFilmsQuery>>.unwrap();
+
     let add = move |_| set_value.update(|value| *value += 1);
     let sub = move |_| set_value.update(|value| *value -= 1);
 
