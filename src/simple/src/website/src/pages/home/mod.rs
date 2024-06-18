@@ -17,12 +17,11 @@ pub fn Home() -> impl IntoView {
 
     let operation = UnnamedQuery::build(());
 
-    let once = create_resource(|| (), |_| async move { load_data().await });
-    let response = Client::new()
-    .post("http://127.0.0.1:8000/graphql")
-    .json(&operation)
-    .send().await
-    .unwrap().json::<GraphQlResponse<UnnamedQuery>>.unwrap();
+    let response = create_resource(|| (), |_| async move { Client::new()
+        .post("http://127.0.0.1:8000/graphql")
+        .json(&operation)
+        .send().await
+        .unwrap().json::<GraphQlResponse<UnnamedQuery>>.unwrap() });
 
     let add = move |_| set_value.update(|value| *value += 1);
     let sub = move |_| set_value.update(|value| *value -= 1);
