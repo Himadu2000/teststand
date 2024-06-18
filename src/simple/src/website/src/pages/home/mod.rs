@@ -7,6 +7,7 @@ use data::Data;
 use leptos::*;
 use query::UnnamedQuery;
 use view::View;
+use reqwest::Client;
 
 #[component]
 pub fn Home() -> impl IntoView {
@@ -16,7 +17,7 @@ pub fn Home() -> impl IntoView {
 
     let operation = UnnamedQuery::build(());
 
-    let response = reqwest::blocking::Client::new()
+    let response = Client::new()
     .post("http://127.0.0.1:8000/graphql")
     .json(&operation)
     .send()
