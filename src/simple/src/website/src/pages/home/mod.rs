@@ -20,7 +20,7 @@ pub fn Home() -> impl IntoView {
     let response = Client::new()
     .post("http://127.0.0.1:8000/graphql")
     .json(&operation)
-    .send()
+    .send().await
     .unwrap();
 
 let all_films_result = response.json::<GraphQlResponse<UnnamedQuery>>.unwrap();
