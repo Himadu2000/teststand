@@ -1,6 +1,7 @@
 mod data;
 mod view;
 
+use cynic::{http::SurfExt, QueryBuilder};
 use data::Data;
 use leptos::*;
 use view::View;
