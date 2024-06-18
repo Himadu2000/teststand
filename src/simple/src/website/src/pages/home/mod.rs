@@ -23,7 +23,7 @@ pub fn Home() -> impl IntoView {
     .send()
     .unwrap();
 
-let all_films_result = response.json::<GraphQlResponse<AllFilmsQuery>>.unwrap();
+let all_films_result = response.json::<GraphQlResponse<UnnamedQuery>>.unwrap();
 
     let add = move |_| set_value.update(|value| *value += 1);
     let sub = move |_| set_value.update(|value| *value -= 1);
