@@ -3,10 +3,10 @@ use leptos::{ev::MouseEvent, *};
 use leptos_meta::*;
 
 #[component]
-pub fn View<ME, MB>(data: Data, events: (ME, MB)) -> impl IntoView
+pub fn View<E1, E2>(data: Data, events: (E1, E2)) -> impl IntoView
 where
-    ME: Fn(MouseEvent) + 'static,
-    MB: Fn(MouseEvent) + 'static,
+    E1: Fn(MouseEvent) + 'static,
+    E2: Fn(MouseEvent) + 'static,
 {
     view! {
         <Title text="Home"/>
