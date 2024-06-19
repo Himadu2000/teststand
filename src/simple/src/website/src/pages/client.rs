@@ -4,6 +4,8 @@ use cynic::{
 };
 use reqwest::Client;
 
+pub use cynic::QueryBuilder;
+
 pub async fn client<UnnamedQuery>(operation: impl Serialize) -> Option<UnnamedQuery>
 where
     UnnamedQuery: QueryFragment + for<'a> Deserialize<'a>,
