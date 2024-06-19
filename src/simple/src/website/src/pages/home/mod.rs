@@ -9,7 +9,7 @@ use query::UnnamedQuery;
 use reqwest::Client;
 use view::View;
 
-#[component]
+#[island]
 pub fn Home() -> impl IntoView {
     let (value, set_value) = create_signal::<u8>(0);
 
