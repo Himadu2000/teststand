@@ -4,16 +4,6 @@ use cynic::{
 };
 use reqwest::Client;
 
-// Pull in the Star Wars schema we registered in build.rs
-#[cynic::schema("schema")]
-mod schema {}
-
-#[derive(QueryFragment, Debug)]
-#[cynic(graphql_type = "Query")]
-pub struct UnnamedQuery {
-    pub status: String,
-}
-
 pub async fn client<UnnamedQuery>(operation: impl Serialize) -> Option<UnnamedQuery>
 where
     UnnamedQuery: QueryFragment + for<'a> Deserialize<'a>,
