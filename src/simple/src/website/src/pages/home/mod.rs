@@ -36,7 +36,10 @@ pub fn Home() -> impl IntoView {
     let add = move |_| set_value.update(|value| *value += 1);
     let sub = move |_| set_value.update(|value| *value -= 1);
 
-    let data = Data { value };
+    let data = Data {
+        value,
+        text: response,
+    };
 
     view! {
         <View data=data events=(add, sub) />
