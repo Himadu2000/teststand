@@ -22,6 +22,10 @@ where
                     <button on:click=events.1 class="rounded px-3 py-2 m-1 border-b-4 border-l-2 shadow-lg bg-blue-700 border-blue-800 text-white">
                         "-"
                     </button>
+                    {move || match data.text.get() {
+                        None => view! { <p>"Loading..."</p> }.into_view(),
+                        Some(data) => view! { <p>{data}</p> }.into_view()
+                    }}
                 </div>
             </div>
         </main>
