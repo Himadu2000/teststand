@@ -5,7 +5,7 @@ use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
 
-// Pull in the Star Wars schema we registered in build.rs
+// Pull in the schema we registered in build.rs
 #[cynic::schema("schema")]
 mod schema {}
 
