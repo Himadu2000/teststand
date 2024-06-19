@@ -21,15 +21,10 @@ pub fn Home() -> impl IntoView {
     let response = create_resource(
         || (),
         |_| async move {
-            Client::new()
-                .post("http://127.0.0.1:8000/graphql")
-                .json(&operation)
-                .send()
+            client::<UnnamedQuery>(UnnamedQuery::build(()))
                 .await
                 .unwrap()
-                .json::<GraphQlResponse<UnnamedQuery>>()
-                .await
-                .unwrap()
+                .status
         },
     );
 
