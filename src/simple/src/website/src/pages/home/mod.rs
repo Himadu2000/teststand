@@ -2,6 +2,7 @@ mod data;
 mod query;
 mod view;
 
+use crate::pages::client::client;
 use cynic::{http::ReqwestExt, GraphQlResponse, QueryBuilder};
 use data::Data;
 use leptos::*;
