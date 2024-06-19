@@ -1,4 +1,3 @@
-mod client;
 mod pages;
 
 use axum::{serve, Router};
