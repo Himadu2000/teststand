@@ -1,3 +1,4 @@
+mod client;
 mod home;
 
 use home::Home;
