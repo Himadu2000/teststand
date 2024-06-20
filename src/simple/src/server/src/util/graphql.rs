@@ -6,11 +6,6 @@ use swd::{graphiql, GraphqlSchema};
 
 type GraphqlSchema = State<Schema<Query, Mutation, EmptySubscription>>;
 
-#[get("/")]
-fn graphiql() -> RawHtml<String> {
-    RawHtml(GraphiQLSource::build().endpoint("/graphql").finish())
-}
-
 #[get("/?<query..>")]
 async fn graphql_query(schema: &GraphqlSchema, query: GraphQLQuery) -> GraphQLResponse {
     query.execute(schema.inner()).await
