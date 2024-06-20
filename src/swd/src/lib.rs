@@ -8,6 +8,11 @@ pub use graphql::{graphiql, GQLSchema};
 pub use reqwest;
 pub use rocket;
 
+#[get("/")]
+fn index() -> &'static str {
+    "Hello, world!"
+}
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
