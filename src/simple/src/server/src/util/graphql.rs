@@ -1,7 +1,10 @@
 use crate::services::{Mutation, Query};
-use async_graphql_rocket::{GraphQLQuery, GraphQLRequest, GraphQLResponse};
-use rocket::{get, post, routes, Route};
-use swd::{graphiql, GQLSchema};
+use swd::{
+    async_graphql_rocket::{GraphQLQuery, GraphQLRequest, GraphQLResponse},
+    graphiql,
+    rocket::{get, post, routes, Route},
+    GQLSchema,
+};
 
 type GraphqlSchema = GQLSchema<Query, Mutation>;
 
