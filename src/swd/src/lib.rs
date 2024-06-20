@@ -1,6 +1,8 @@
-pub mod cors;
+mod cors;
 
+pub use async_graphql;
 pub use async_graphql_rocket;
+pub use cors::Cors;
 pub use reqwest;
 pub use rocket;
 
