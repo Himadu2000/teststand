@@ -8,6 +8,7 @@ use crate::{
 use swd::{
     async_graphql::{EmptySubscription, Schema},
     index,
+    rocket::build,
     rocket::{launch, routes},
     Cors,
 };
@@ -16,7 +17,7 @@ use swd::{
 fn rocket() -> _ {
     let schema = Schema::build(Query::default(), Mutation::default(), EmptySubscription).finish();
 
-    rocket::build()
+    build()
         .attach(Cors)
         .manage(schema)
         .mount("/", routes![index])
