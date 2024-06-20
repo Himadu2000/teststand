@@ -2,11 +2,11 @@ use async_graphql::{http::GraphiQLSource, EmptyMutation, EmptySubscription, Sche
 use async_graphql_rocket::{GraphQLQuery, GraphQLRequest, GraphQLResponse};
 use rocket::{get, post, response::content::RawHtml, routes, Route, State};
 
-type GraphqlSchema<Query, Mutation = EmptyMutation, Subscription = EmptySubscription> =
+pub type GraphqlSchema<Query, Mutation = EmptyMutation, Subscription = EmptySubscription> =
     State<Schema<Query, Mutation, Subscription>>;
 
 #[get("/")]
-fn graphiql() -> RawHtml<String> {
+pub fn graphiql() -> RawHtml<String> {
     RawHtml(GraphiQLSource::build().endpoint("/graphql").finish())
 }
 
