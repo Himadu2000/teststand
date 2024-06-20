@@ -1,4 +1,5 @@
 use async_graphql::{MergedObject, Object};
+use swd::Object;
 
 #[derive(Default)]
 struct QueryRoot;
