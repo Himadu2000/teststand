@@ -1,3 +1,3 @@
 # Summary
 
-- [Contributing ](./contributing.md)
+- [Contributing Guidelines](./contributing.md)
