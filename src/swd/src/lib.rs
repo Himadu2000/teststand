@@ -7,10 +7,10 @@ pub use cors::Cors;
 pub use graphql::{graphiql, GQLSchema};
 pub use reqwest;
 pub use rocket;
-use rocket::get;
+use rocket::{get, response::Redirect};
 
 #[get("/")]
-pub fn index() -> &'static str {
+pub fn index() -> Redirect {
     "Hello, world!"
 }
 
