@@ -3,15 +3,14 @@ mod util;
 
 use crate::{
     services::{Mutation, Query},
-    util::{cors::Cors, graphql::graphql},
+    util::graphql::graphql,
 };
-use async_graphql::{EmptySubscription, Schema};
-use rocket::{get, launch, routes};
-
-#[get("/")]
-fn index() -> &'static str {
-    "Hello, world!"
-}
+use swd::{
+    async_graphql::{EmptySubscription, Schema},
+    index,
+    rocket::{launch, routes},
+    Cors,
+};
 
 #[launch]
 fn rocket() -> _ {
