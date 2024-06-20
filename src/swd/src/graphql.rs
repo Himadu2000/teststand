@@ -1,9 +1,9 @@
-use crate::services::{Mutation, Query};
-use async_graphql::{http::GraphiQLSource, EmptySubscription, Schema};
+use async_graphql::{http::GraphiQLSource, EmptyMutation, EmptySubscription, Schema};
 use async_graphql_rocket::{GraphQLQuery, GraphQLRequest, GraphQLResponse};
 use rocket::{get, post, response::content::RawHtml, routes, Route, State};
 
-type GraphqlSchema = State<Schema<Query, Mutation, EmptySubscription>>;
+type GraphqlSchema<Query, Mutation = EmptyMutation, Subscription = EmptySubscription> =
+    State<Schema<Query, Mutation, Subscription>>;
 
 #[get("/")]
 fn graphiql() -> RawHtml<String> {
