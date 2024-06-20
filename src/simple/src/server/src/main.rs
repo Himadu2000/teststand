@@ -8,8 +8,7 @@ use crate::{
 use swd::{
     async_graphql::{EmptySubscription, Schema},
     index,
-    rocket::build,
-    rocket::{launch, routes},
+    rocket::{build, launch, routes},
     Cors,
 };
 
