@@ -7,11 +7,11 @@ pub use cors::Cors;
 pub use graphql::{graphiql, GQLSchema};
 pub use reqwest;
 pub use rocket;
-use rocket::{get, response::Redirect};
+use rocket::{get, response::Redirect, uri};
 
 #[get("/")]
 pub fn index() -> Redirect {
-    "Hello, world!"
+    Redirect::to(uri!("/graphql"))
 }
 
 pub fn add(left: usize, right: usize) -> usize {
