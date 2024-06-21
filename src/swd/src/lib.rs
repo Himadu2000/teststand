@@ -11,7 +11,9 @@ use rocket::{get, response::Redirect, uri};
 pub use serde::{Deserialize, Serialize};
 pub use surrealdb::{
     self,
+    engine::local::Db,
     sql::{Datetime, Thing},
+    Surreal,
 };
 
 #[get("/")]
