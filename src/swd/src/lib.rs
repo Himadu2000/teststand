@@ -8,6 +8,8 @@ pub use graphql::{graphiql, GQLSchema};
 pub use reqwest;
 pub use rocket;
 use rocket::{get, response::Redirect, uri};
+pub use serde::{Deserialize, Serialize};
+pub use surrealdb::{self, sql::Thing};
 
 #[get("/")]
 pub fn index() -> Redirect {
