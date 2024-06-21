@@ -11,10 +11,11 @@ use rocket::{get, response::Redirect, uri};
 pub use serde::{Deserialize, Serialize};
 pub use surrealdb::{
     self,
-    engine::local::Db,
     sql::{Datetime, Thing},
-    Surreal,
 };
+use surrealdb::{engine::local::Db, Surreal};
+
+pub type SurrealDb = Surreal<Db>;
 
 #[get("/")]
 pub fn index() -> Redirect {
